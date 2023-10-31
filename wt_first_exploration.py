@@ -21,8 +21,11 @@ sns.set()
 
 import streamlit as st
 
-st.title("world-temperature1")
+import streamlit as st
+
+st.title("My Streamlit App")
 st.write("Hello, Streamlit!")
+
 
 streamlit run my_app.py
 
