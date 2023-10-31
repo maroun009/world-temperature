@@ -20,11 +20,6 @@ import streamlit as st
 sns.set()
 
 
-st.title("My Streamlit App")
-st.write("Hello, Streamlit!")
-
-streamlit run https://world-temperature1.streamlit.app/
-
 
 
 
