@@ -19,14 +19,10 @@ import seaborn as sns
 import streamlit as st
 sns.set()
 
-
-
-
-
 df_Zon = pd.read_csv("ZonAnn.Ts+dSST.csv")
-df_Zon.head()
+st.write(df_Zon.head())
 
-plt.figure(figsize = (10,7))
+df_Zon_plot1 = plt.figure(figsize = (10,7))
 sns.lineplot(x = "Year", y = "Glob", data = df_Zon, label = "Global")
 sns.lineplot(x = "Year", y = "NHem", data = df_Zon, label = "Northern Hemisphere")
 sns.lineplot(x = "Year", y = "SHem", data = df_Zon, label = "Southern Hemisphere")
@@ -35,7 +31,9 @@ plt.ylabel("Temperature (ºC change)")
 plt.title("Temperature anomalies")
 plt.legend();
 
-plt.figure(figsize = (10,7))
+st.pyplot(df_Zon_plot1)
+
+df_Zon_plot2 = plt.figure(figsize = (10,7))
 sns.lineplot(x = "Year", y = "Glob", data = df_Zon[df_Zon["Year"]>=1990], label = "Global")
 sns.lineplot(x = "Year", y = "NHem", data = df_Zon[df_Zon["Year"]>=1990], label = "Northern Hemisphere")
 sns.lineplot(x = "Year", y = "SHem", data = df_Zon[df_Zon["Year"]>=1990], label = "Southern Hemisphere")
@@ -44,38 +42,51 @@ plt.ylabel("Temperature (ºC change)")
 plt.title("Temperature anomalies")
 plt.legend();
 
+st.pyplot(df_Zon_plot2)
+
 df_co2 = pd.read_csv("owid-co2-data.csv")
 df_co2.head()
 
 df_co2["country"].unique()
 
 df_co2_n = df_co2[df_co2["country"].isin(["North America", "Asia", "Europe", "World"])]
+st.dataframe(df_co2_n)
+st.sidebar.multiselect('Which country do you want?',df_co2_n)
 
-df_co2_n.head()
+st.write(df_co2_n.head())
 
-plt.figure(figsize = (10,7))
+df_Zon_plot3 = plt.figure(figsize = (10,7))
 sns.relplot(x = "year", y = "share_of_temperature_change_from_ghg", kind = "line", hue = "country", data = df_co2_n)
 plt.xlabel("Year")
 plt.ylabel("Contribution (%)")
 plt.title("Share of contribution to global warming");
 
-plt.figure(figsize = (10,7))
+st.pyplot(df_Zon_plot3)
+
+df_Zon_plot4 = plt.figure(figsize = (10,7))
 sns.relplot(x = "year", y = "temperature_change_from_co2", kind = "line", hue = "country", data = df_co2_n)
 plt.xlabel("Year")
 plt.ylabel("Temperature change (ºC)")
 plt.title("Contribution to temperature increase due to CO2");
 
-plt.figure(figsize = (12,8))
+st.pyplot(df_Zon_plot4)
+
+df_Zon_plot5 = plt.figure(figsize = (12,8))
 sns.relplot(x = "year", y = "co2", kind = "line", hue = "country", data = df_co2_n)
 plt.xlabel("Year")
 plt.ylabel("CO2 (million tonnes)")
 plt.title("Annual total emissions of CO2");
 
-plt.figure(figsize = (12,8))
+st.pyplot(df_Zon_plot5)
+
+df_Zon_plot6 = plt.figure(figsize = (12,8))
 sns.relplot(x = "year", y = "co2_per_capita", kind = "line", hue = "country", data = df_co2_n)
 plt.xlabel("Year")
 plt.ylabel("CO2 (million tonnes per person)")
 plt.title("Annual emissions of CO2 per capita");
+
+st.pyplot(df_Zon_plot6)
+
 
 df_co2_n["gdp"] = df_co2_n['co2']/df_co2_n["co2_per_gdp"]
 
@@ -88,8 +99,12 @@ g.set_titles(col_template="Temperature change vs GDP")
 
 g.add_legend();
 
+st.pyplot(g)
+
 # Since GDP and population seem to positively correlate with Co2 emissions and temperature increase, let's focus on some big and/or rich countries.
 df_co2_country = df_co2[df_co2["country"].isin(["United States", "Canada", "Germany", "France", "Russia", "China", "India", "Brazil", "Australia"])]
+st.dataframe(df_co2_country)
+st.sidebar.multiselect('Which country do you want?',df_co2_country)
 
 # We will also have a separate dataset with "World" co2 data.
 
@@ -116,30 +131,32 @@ filtered = df_temp[(df_temp['Year'] >= 1880) & (df_temp['Year'] <= 1900)]
 # Calculate the average temperature anomalies for the specified period
 average = filtered['Glob'].mean()
 
-print(f'Average temperature anomalies between 1880 and 1900: {average:.2f}')
+st.text(f'Average temperature anomalies between 1880 and 1900: {average:.2f}')
 
 df_temp["Glob_adj"] = df_temp["Glob"] - (-0.22)
 
-df_temp.head()
+st.write(df_temp.head())
 
-plt.figure(figsize = (10,7))
+df_temp_plot1 = plt.figure(figsize = (10,7))
 sns.lineplot(x = "Year", y = "Glob_adj", data = df_temp)
 plt.xlabel("Year")
 plt.ylabel("Temperature (ºC change)")
 plt.title("Temperature anomalies (pre-industrial levels)");
 
+st.pyplot(df_temp_plot1)
+
 # We can do the same with Northern and Sothern Hemispheres out of curiosity...
 average_n = filtered['NHem'].mean()
-print(f'NHem-Average temperature anomalies between 1880 and 1900: {average_n:.2f}')
+st.text(f'NHem-Average temperature anomalies between 1880 and 1900: {average_n:.2f}')
 average_s = filtered['SHem'].mean()
-print(f'SHem-Average temperature anomalies between 1880 and 1900: {average_s:.2f}')
+st.text(f'SHem-Average temperature anomalies between 1880 and 1900: {average_s:.2f}')
 
 df_temp["NHem_adj"] = df_temp["NHem"] - (-0.30)
 df_temp["SHem_adj"] = df_temp["SHem"] - (-0.14)
 
 df_temp.head()
 
-plt.figure(figsize = (10,7))
+df_temp_plot2 = plt.figure(figsize = (10,7))
 sns.lineplot(x = "Year", y = "Glob_adj", data = df_temp, label = "Global")
 sns.lineplot(x = "Year", y = "NHem_adj", data = df_temp, label = "Northern Hemisphere")
 sns.lineplot(x = "Year", y = "SHem_adj", data = df_temp, label = "Southern Hemisphere")
@@ -148,38 +165,48 @@ plt.ylabel("Temperature (ºC change)")
 plt.title("Temperature anomalies (pre-industrial levels)")
 plt.legend();
 
+st.pyplot(df_temp_plot2)
+
 # We can see that the Northern Hemisphere has surpased the 1.5ºC "limit" a couple of times. It's also interesting to see a seasonality in the data...
 
 # Some graphs for the country dataset:
 
-plt.figure(figsize = (10,7))
+df_temp_plot3 = plt.figure(figsize = (10,7))
 sns.relplot(x = "year", y = "temperature_change_from_co2", kind = "line", hue = "country", data = df_co2_country)
 plt.xlabel("Year")
 plt.ylabel("Temperature change (ºC)")
 plt.title("Contribution to temperature increase due to CO2");
 
+st.pyplot(df_temp_plot3)
+
 # United States is a big contributor to temperature increase due to CO2 emissions!
 
-plt.figure(figsize = (12,8))
+df_temp_plot4 = plt.figure(figsize = (12,8))
 sns.relplot(x = "year", y = "co2", kind = "line", hue = "country", data = df_co2_country)
 plt.xlabel("Year")
 plt.ylabel("CO2 (million tonnes)")
 plt.title("Annual total emissions of CO2");
 
-plt.figure(figsize = (12,8))
+st.pyplot(df_temp_plot4)
+
+df_temp_plot5 = plt.figure(figsize = (12,8))
 sns.relplot(x = "year", y = "co2_per_capita", kind = "line", hue = "country", data = df_co2_country)
 plt.xlabel("Year")
 plt.ylabel("CO2 (million tonnes per person)")
 plt.title("Annual emissions of CO2 per capita");
 
+st.pyplot(df_temp_plot5)
+
 # In the last few decades, China has been leading in total Co2 emissions, although on a per capita basis,
 # the United States was the leader throughout the last century.
 
-plt.figure(figsize = (10,7))
+df_temp_plot6 = plt.figure(figsize = (10,7))
 sns.relplot(x = "gdp", y = "temperature_change_from_co2", hue = "country", data = df_co2_country)
 plt.xlabel("GDP")
 plt.ylabel("Temperature change (ºC)")
 plt.title("Temperature change due to CO2");
+
+st.pyplot(df_temp_plot6)
 
 # Picking only variables of interest (let me know if you want to add another):
 
@@ -268,7 +295,7 @@ temperature_range = temperature_data['J-D'].max() - temperature_data['J-D'].min(
 temperature_iqr = temperature_data['J-D'].quantile(0.75) - temperature_data['J-D'].quantile(0.25)
 
 # Data Visualization
-plt.figure(figsize=(14, 6))
+plot1 = plt.figure(figsize=(14, 6))
 plt.subplot(1, 2, 1)
 sns.histplot(data=co2_data, x='co2', kde=True)
 plt.title("CO2 Emissions Distribution")
@@ -279,16 +306,18 @@ plt.title("Temperature Anomalies Distribution")
 
 plt.show()
 
-# Print Data Distribution Summary
-print("Summary Statistics for CO2 Emissions:")
-print(co2_description)
-print(f"Mean: {co2_mean:.2f}, Median: {co2_median:.2f}, Mode: {co2_mode:.2f}")
-print(f"Standard Deviation: {co2_std:.2f}, Range: {co2_range:.2f}, IQR: {co2_iqr:.2f}")
+st.pyplot(plot1)
 
-print("\nSummary Statistics for Temperature Anomalies:")
-print(temperature_description)
-print(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
-print(f"Standard Deviation: {temperature_std:.2f}, Range: {temperature_range:.2f}, IQR: {temperature_iqr:.2f}")
+# Print Data Distribution Summary
+st.write("Summary Statistics for CO2 Emissions:")
+st.write(co2_description)
+st.write(f"Mean: {co2_mean:.2f}, Median: {co2_median:.2f}, Mode: {co2_mode:.2f}")
+st.write(f"Standard Deviation: {co2_std:.2f}, Range: {co2_range:.2f}, IQR: {co2_iqr:.2f}")
+
+st.write("\nSummary Statistics for Temperature Anomalies:")
+st.write(temperature_description)
+st.write(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
+st.write(f"Standard Deviation: {temperature_std:.2f}, Range: {temperature_range:.2f}, IQR: {temperature_iqr:.2f}")
 
 import pandas as pd
 import seaborn as sns
@@ -319,7 +348,7 @@ temperature_range = temperature_data['Glob'].max() - temperature_data['Glob'].mi
 temperature_iqr = temperature_data['Glob'].quantile(0.75) - temperature_data['Glob'].quantile(0.25)
 
 # Data Visualization
-plt.figure(figsize=(14, 6))
+plot2 = plt.figure(figsize=(14, 6))
 plt.subplot(1, 2, 1)
 sns.histplot(data=co2_data, x='co2', kde=True)
 plt.title("CO2 Emissions Distribution")
@@ -330,16 +359,18 @@ plt.title("Temperature Anomalies Distribution")
 
 plt.show()
 
-# Print Data Distribution Summary
-print("Summary Statistics for CO2 Emissions:")
-print(co2_description)
-print(f"Mean: {co2_mean:.2f}, Median: {co2_median:.2f}, Mode: {co2_mode:.2f}")
-print(f"Standard Deviation: {co2_std:.2f}, Range: {co2_range:.2f}, IQR: {co2_iqr:.2f}")
+st.pyplot(plot2)
 
-print("\nSummary Statistics for Temperature Anomalies:")
-print(temperature_description)
-print(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
-print(f"Standard Deviation: {temperature_std:.2f}, Range: {temperature_range:.2f}, IQR: {temperature_iqr:.2f}")
+# Print Data Distribution Summary
+st.write("Summary Statistics for CO2 Emissions:")
+st.write(co2_description)
+st.write(f"Mean: {co2_mean:.2f}, Median: {co2_median:.2f}, Mode: {co2_mode:.2f}")
+st.write(f"Standard Deviation: {co2_std:.2f}, Range: {co2_range:.2f}, IQR: {co2_iqr:.2f}")
+
+st.write("\nSummary Statistics for Temperature Anomalies:")
+st.write(temperature_description)
+st.write(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
+st.write(f"Standard Deviation: {temperature_std:.2f}, Range: {temperature_range:.2f}, IQR: {temperature_iqr:.2f}")
 
 cols = ["population", "gdp", "co2", "co2_per_capita", "co2_per_gdp"]
 
@@ -363,10 +394,14 @@ for i in cols2:
   plt.title(f'Boxplot for {i}')
   plt.show()
 
-plt.figure(figsize=(7,7))
+st.pyplot(plot2)
+
+plot3 = plt.figure(figsize=(7,7))
 
 sns.heatmap(merged_global[cols2].corr(),annot=True,cmap='viridis');
 
 # A high correlation between many of the variables chosen can be seen.
 
 sns.pairplot(merged_global[cols2], diag_kind = "kde")
+
+st.pyplot(plot3)
