@@ -23,7 +23,8 @@ sns.set()
 st.title("My Streamlit App")
 st.write("Hello, Streamlit!")
 
-streamlit run wt_first_exploration.py
+streamlit run https://world-temperature1.streamlit.app/
+
 
 
 
