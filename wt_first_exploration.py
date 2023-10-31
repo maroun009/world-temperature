@@ -19,7 +19,7 @@ import seaborn as sns
 import streamlit as st
 sns.set()
 
-!pip install streamlit
+
 
 
 
