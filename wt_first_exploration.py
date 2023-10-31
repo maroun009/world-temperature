@@ -19,6 +19,10 @@ import seaborn as sns
 import streamlit as st
 sns.set()
 
+import streamlit as st
+
+st.title("My Streamlit App")
+st.write("Hello, Streamlit!")
 
 
 
