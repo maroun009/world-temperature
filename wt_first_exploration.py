@@ -24,7 +24,7 @@ st.title("My Streamlit App")
 st.write("Hello, Streamlit!")
 
 
-streamlit run my_app.py
+streamlit run world-temperature1
 
 
 
