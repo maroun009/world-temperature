@@ -313,7 +313,7 @@ co2_iqr = co2_data['co2'].quantile(0.75) - co2_data['co2'].quantile(0.25)
 temperature_description = temperature_data.describe()
 temperature_mean = temperature_data['Glob'].mean()
 temperature_median = temperature_data['Glob'].median()
-temperature_mode = temperature_data['Glob'].mode().values[0]
+#temperature_mode = temperature_data['Glob'].mode().values[0]
 temperature_std = temperature_data['Glob'].std()
 temperature_range = temperature_data['Glob'].max() - temperature_data['Glob'].min()
 temperature_iqr = temperature_data['Glob'].quantile(0.75) - temperature_data['Glob'].quantile(0.25)
@@ -338,7 +338,7 @@ print(f"Standard Deviation: {co2_std:.2f}, Range: {co2_range:.2f}, IQR: {co2_iqr
 
 print("\nSummary Statistics for Temperature Anomalies:")
 print(temperature_description)
-print(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
+#print(f"Mean: {temperature_mean:.2f}, Median: {temperature_median:.2f}, Mode: {temperature_mode:.2f}")
 print(f"Standard Deviation: {temperature_std:.2f}, Range: {temperature_range:.2f}, IQR: {temperature_iqr:.2f}")
 
 cols = ["population", "gdp", "co2", "co2_per_capita", "co2_per_gdp"]
