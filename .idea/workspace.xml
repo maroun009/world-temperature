@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="daf436ba-a715-468c-9fe8-52f0840ec7ad" name="Changes" comment="hi">
+      <change beforePath="$PROJECT_DIR$/app/Home.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/AutumLeaves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/CO2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/CarbonFootprint.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/CombiningKnownData.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/DataSeparation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/EarthCartoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/EarthGraphic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ExploringTime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ExploringTime1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/FeatureScaling.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/FeatureSelection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/Forest.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/FutureDataTable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/FuturePredictions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/GlobalWarmingTree.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/GreenHouseGasesPollution.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/LeafLightbulb.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/LinearRegression.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/MissingValues.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ModelEvaluation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ModelEvaluation1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ModelImprovement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ModelImprovementGraph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/OutliarDetection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/PredictingTempChange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/RandomForest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/ResidualAnalysis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/SustainableTechnology.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/TemperatureAnomalyForecast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/Tree.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/img/TreeDataGraph.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_1.0_Contents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_1.2_Introduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_1.2_Understanding_and_Manipulation_of_Data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_1.3_Pre-Processing and Feature Engineering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_1.4_Visualisations_and_Statistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/1_Contents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_1_Introduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_2.0_Contents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_2.1_Classification_of_Problem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_2.2_Model_Choice_and_Optimization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_2.3_Interpretation_of_Results.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_2_Understanding_and_Manipulation_of_Data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_3_Pre-Processing and Feature Engineering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/2_4_Visualisations_and_Statistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/3_3.1_Contents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/3_Global_Annual_Temperature_Zone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/4_Global_Annual_Temperature_Zone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/4_Global_CO2_Emission_by_Region.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/5_Global_CO2_Emission_by_Country.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/5_Global_CO2_Emission_by_Region.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/6_CO2_Emissions_&amp;_Temperature_Anomalies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/6_Global_CO2_Emission_by_Country.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/7_CO2_Emissions_&amp;_Temperature_Anomalies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/7_World_Environmental_Data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/8_World_Environmental_Data.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2YRMndV2JdJyzSLnRTPltoVojKu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="daf436ba-a715-468c-9fe8-52f0840ec7ad" name="Changes" comment="" />
+      <created>1700484106901</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700484106901</updated>
+    </task>
+    <task id="LOCAL-00001" summary="hi">
+      <option name="closed" value="true" />
+      <created>1700484309911</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700484309911</updated>
+    </task>
+    <task id="LOCAL-00002" summary="hi">
+      <option name="closed" value="true" />
+      <created>1700488825723</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700488825723</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hi" />
+    <option name="LAST_COMMIT_MESSAGE" value="hi" />
+  </component>
+</project>
