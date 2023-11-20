@@ -8,7 +8,7 @@ st.set_page_config(
 st.markdown("# Climate Insights: A Comprehensive Analysis of Global Temperature Trends and Future Projections")
 
 greenhouse_gas = Image.open("app/img/GreenHouseGasesPollution.jpg")
-
+st.image(greenhouse_gas, use_column_width=True)
 # Additional content goes here
 
 
