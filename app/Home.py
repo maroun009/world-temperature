@@ -1,18 +1,25 @@
 import streamlit as st
 from PIL import Image
+from PresentationPage import presentation_breakdown_page
 
 st.set_page_config(
     page_title="Climate Insights: A Comprehensive Analysis of Global Temperature Trends and Future Projections",
     page_icon="🌐",
 )
 
-st.markdown("# Climate Insights: A Comprehensive Analysis of Global Temperature Trends and Future Projections")
+# Sidebar navigation
+page_options = ["Home", "Project Breakdown"]
+selected_page = st.sidebar.selectbox("Navigate to", page_options)
 
-# Specify the correct path to the image
-image_path = "app/img/GreenHouseGasesPollution.jpg"
-greenhouse_gas = Image.open(image_path)
-st.image(greenhouse_gas, use_column_width=True)
-# Additional content goes here
+# Main content based on selected page
+if selected_page == "Home":
+    st.markdown("# Climate Insights: A Comprehensive Analysis of Global Temperature Trends and Future Projections")
 
+    # Display the image
+    greenhouse_gas = Image.open("app/img/GreenHouseGasesPollution.jpg")
+    st.image(greenhouse_gas, use_column_width=True)
 
+    # Additional content goes here
 
+elif selected_page == "Project Breakdown":
+    presentation_breakdown_page()
